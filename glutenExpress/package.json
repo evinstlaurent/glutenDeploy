@@ -1,0 +1,29 @@
+{
+  "name": "gluten-express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon --ext * ./bin/www",
+    "serverstart": "SET DEBUG=gluten-express:* & npm run start"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "fetch": "^1.1.0",
+    "http-errors": "~2.0.0",
+    "jsdom": "^25.0.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.4",
+    "openai": "^4.73.1",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

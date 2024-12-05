@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='description' content='Gluten Free Product Tracker - A tool to help identify gluten-containing ingredients in products')
+  title Gluten Free Product Tracker
+  link(rel='stylesheet' href='../stylesheets/style.css')
+// Header Section
+header
+  h1 Gluten Free Product Tracker
+  p Your go-to tool for identifying gluten in your favorite products
+  nav
+    ul
+      li
+        a(href='/') Home
+      li
+        a(href='/filter') Search and Filter Products
+// Search and Filter Section
+main
+    section#product-form-section
+        h2 Search and Filter Products
+        form#product-form(method='POST' action='/filter')
+            label(for='searchText') Search:
+            input#search-term(type='text' name='searchText' placeholder='Search for Product Names, Ingredients, or Brands')
+            label(for='glutenFlag') Is Gluten-Free:
+            select#category(name='glutenFlag')
+                option(selected value='none') --Select Option--
+                option(value='noGluten') Yes
+                option(value='gluten') No
+            label(for='categoryFilter') Category:
+            select#category(name='categoryFilter' maxlength='50')
+                option(selected value='none') --Select Category--
+                option(value='Baked Good') Baked Good
+                option(value='Baking') Baking
+                option(value='Beverage') Beverage
+                option(value='Bread') Bread
+                option(value='Condiment') Condiment
+                option(value='Dairy') Dairy
+                option(value='Dessert') Dessert
+                option(value='Pasta') Pasta
+                option(value='Produce') Produce
+                option(value='Protein') Protein
+                option(value='Side') Side
+                option(value='Snack') Snack
+            label() Refresh page after submission to view products!
+            button#filter-button(type='submit') Filter
+    section#product-listings
+    h2 Product Listing
+    #product-list
+        block content
+// Footer
+footer
+  p &copy; 2024 Gluten Free Product Tracker

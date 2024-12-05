@@ -1,0 +1,26 @@
+extends indexLayout.pug
+
+block content
+    for productData in listingsArray
+        if (productData.isGluten == 'gluten')
+            .product-card.product-entry-gluten 
+                h3 #{productData.productName}
+                h4 Gluten-Containing Ingredients:
+                ul
+                    - let glutenIng = productData.glutenIngredientsList.split(",")
+                    each ingredient in glutenIng
+                        li= ingredient
+                p Category: #{productData.productCategory}
+                p Brand: #{productData.brand}
+                h5 All Ingredients:
+                p #{productData.ingredientList}
+        else if (productData.isGluten == 'noGluten')
+            .product-card.product-entry-free
+                h3 #{productData.productName}
+                h4 Gluten-Containing Ingredients:
+                ul
+                    li= productData.glutenIngredientsList
+                p Category: #{productData.productCategory}
+                p Brand: #{productData.brand}
+                h5 All Ingredients:
+                p #{productData.ingredientList} 
